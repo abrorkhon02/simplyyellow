@@ -1,0 +1,1932 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simply Yellow Catering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Simply Yellow coffee & catering for business events with authentic flavor and warmth."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Hide scrollbar for all browsers */
+      html {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+      html::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+      body::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+      }
+      .gradient-yellow {
+        background: linear-gradient(135deg, #ffd54f 0%, #ffc107 100%);
+      }
+      .section-spacing {
+        padding-top: 6rem;
+        padding-bottom: 7rem;
+      }
+      @media (max-width: 768px) {
+        .section-spacing {
+          padding-top: 5rem;
+          padding-bottom: 6rem;
+        }
+      }
+      @media (min-width: 1920px) {
+        .section-spacing {
+          padding-top: 10rem;
+          padding-bottom: 12rem;
+        }
+      }
+      /* Hide scrollbar in modal popups */
+      .modal-content {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+      .modal-content::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+      * {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+      *::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+      /* Ensure modals and their children are completely hidden when not active */
+      .modal-hidden {
+        display: none !important;
+      }
+      .modal-hidden * {
+        display: none !important;
+      }
+      /* Desktop navigation - always show on large screens */
+      @media (min-width: 1024px) {
+        .desktop-nav {
+          display: flex !important;
+        }
+      }
+      /* Mobile navigation - hide on large screens */
+      @media (min-width: 1024px) {
+        .mobile-only {
+          display: none !important;
+        }
+      }
+      .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-md border-b border-gray-200 shadow-sm"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between gap-8"
+      >
+        <a href="#home" class="flex items-center gap-3 flex-shrink-0">
+          <!-- Sun logo -->
+          <svg
+            class="w-10 h-10"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="5" fill="#FFD54F" />
+            <g stroke="#FFC107" stroke-width="1.5" stroke-linecap="round">
+              <path d="M12 1v2" />
+              <path d="M12 21v2" />
+              <path d="M4.22 4.22l1.42 1.42" />
+              <path d="M18.36 18.36l1.42 1.42" />
+              <path d="M1 12h2" />
+              <path d="M21 12h2" />
+              <path d="M4.22 19.78l1.42-1.42" />
+              <path d="M18.36 5.64l1.42-1.42" />
+            </g>
+          </svg>
+          <div>
+            <div class="text-base font-semibold tracking-tight text-gray-900">
+              Simply Yellow Catering
+            </div>
+          </div>
+        </a>
+
+        <nav
+          class="desktop-nav hidden lg:flex items-center gap-8"
+          aria-label="Main navigation"
+        >
+          <a
+            href="#home"
+            class="text-sm font-medium text-gray-700 hover:text-yellow-500 transition"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="text-sm font-medium text-gray-700 hover:text-yellow-500 transition"
+            >About</a
+          >
+          <a
+            href="#services"
+            class="text-sm font-medium text-gray-700 hover:text-yellow-500 transition"
+            >Services</a
+          >
+          <a
+            href="#gallery"
+            class="text-sm font-medium text-gray-700 hover:text-yellow-500 transition"
+            >Gallery</a
+          >
+          <a
+            href="#contact"
+            class="text-sm font-medium text-gray-700 hover:text-yellow-500 transition"
+            >Contact</a
+          >
+        </nav>
+
+        <div class="desktop-nav hidden lg:flex items-center gap-6">
+          <!-- Language Switcher -->
+          <button
+            onclick="toggleLang()"
+            class="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full hover:border-yellow-400 transition group"
+            aria-label="Switch language"
+          >
+            <svg
+              class="w-4 h-4 text-gray-600 group-hover:text-yellow-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+              ></path>
+            </svg>
+            <span id="current-lang" class="text-sm font-semibold text-gray-700"
+              >EN</span
+            >
+          </button>
+
+          <a
+            href="inquiry.html"
+            class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 text-sm font-bold hover:scale-105 transition-transform duration-200"
+          >
+            <span>Request Quote</span>
+          </a>
+        </div>
+
+        <button
+          id="menuBtn"
+          class="lg:hidden w-10 h-10 flex items-center justify-center border border-gray-200 rounded-lg"
+          aria-label="Menu"
+          onclick="toggleMobileMenu()"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <nav
+        id="navMenu"
+        class="lg:hidden hidden border-t border-gray-100 bg-white"
+      >
+        <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-3">
+          <a href="#home" class="py-2 text-gray-700 hover:text-yellow-500"
+            >Home</a
+          >
+          <a href="#about" class="py-2 text-gray-700 hover:text-yellow-500"
+            >About</a
+          >
+          <a href="#services" class="py-2 text-gray-700 hover:text-yellow-500"
+            >Services</a
+          >
+          <a href="#gallery" class="py-2 text-gray-700 hover:text-yellow-500"
+            >Gallery</a
+          >
+          <a href="#contact" class="py-2 text-gray-700 hover:text-yellow-500"
+            >Contact</a
+          >
+          <a
+            href="inquiry.html"
+            class="mt-3 px-6 py-2.5 rounded-full bg-gradient-yellow text-gray-900 font-semibold text-center"
+            >Request Quote</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <section id="home" class="relative">
+      <div
+        class="relative h-screen min-h-screen max-h-[800px] overflow-hidden bg-gradient-to-br from-gray-900 to-black"
+      >
+        <video
+          class="absolute inset-0 w-full h-full object-cover opacity-40"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/hero-poster.jpg"
+        >
+          <source src="assets/simply-yellow-hero.webm" type="video/mp4" />
+        </video>
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/70 to-transparent"
+        ></div>
+
+        <div
+          class="relative z-10 max-w-7xl mx-auto h-full px-6 lg:px-8 flex items-center"
+        >
+          <div class="max-w-2xl space-y-8">
+            <div class="space-y-3">
+              <p
+                class="uppercase tracking-widest text-xs font-semibold text-yellow-400"
+              >
+                Premium Coffee & Catering
+              </p>
+              <h1
+                class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
+              >
+                Coffee that fuels your
+                <span class="gradient-yellow bg-clip-text text-transparent"
+                  >success</span
+                >
+              </h1>
+            </div>
+            <p
+              class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-xl"
+            >
+              From espresso bars at trade fairs to breakfast catering in Berlin
+              we bring authentic flavor, energy, and warmth to your business
+              events.
+            </p>
+            <div class="flex flex-wrap items-center gap-4 pt-4">
+              <a
+                href="inquiry.html"
+                class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 font-bold hover:shadow-2xl hover:from-yellow-500 hover:to-yellow-600 transition text-base"
+                >Request a Quote</a
+              >
+              <a
+                href="#about"
+                class="inline-flex items-center justify-center px-8 py-3.5 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition text-base"
+                >Explore Services</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce"
+        >
+          <svg
+            class="w-6 h-6 text-yellow-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-spacing bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8">
+            <div class="space-y-4">
+              <p
+                class="uppercase tracking-widest text-xs font-semibold text-yellow-500"
+              >
+                Our Story
+              </p>
+              <h2
+                class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+              >
+                About Simply Yellow
+              </h2>
+            </div>
+            <div class="space-y-6 text-gray-700 text-lg leading-relaxed">
+              <p>
+                For over 15 years, founder BEA Le Duy has lived in hospitality
+                always focused on exceptional coffee. Simply Yellow represents
+                curated coffee experiences, regional quality, and authentic
+                service.
+              </p>
+              <p>
+                Our coffee is roasted fresh in Berlin, while pastries come from
+                sister company Zuka. Every cup and plate connects people at
+                trade fairs, offices, and events.
+              </p>
+            </div>
+            <blockquote
+              class="p-6 bg-white border-l-8 border-yellow-400 rounded-lg shadow-sm"
+            >
+              <p
+                class="text-2xl font-semibold text-gray-900 italic leading-tight"
+              >
+                "Every cup should be a moment of connection and energy."
+              </p>
+              <p class="text-sm text-gray-600 mt-3">— BEA Le Duy, Founder</p>
+            </blockquote>
+          </div>
+
+          <div class="relative group">
+            <div
+              class="absolute inset-0 gradient-yellow rounded-3xl blur-2xl opacity-20"
+            ></div>
+            <div
+              class="relative w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl"
+            >
+              <img
+                src="assets/images/our_story.jpg"
+                alt="Our Story - Simply Yellow Team"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section-spacing bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="mb-16 max-w-3xl">
+          <p
+            class="uppercase tracking-widest text-xs font-semibold text-yellow-500 mb-3"
+          >
+            What We Offer
+          </p>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Premium Services for Your Events
+          </h2>
+          <p class="text-lg text-gray-600">
+            Flexible, scalable solutions tailored to your business needs. From
+            espresso bars nationwide to full-service catering in Berlin.
+          </p>
+        </div>
+
+        <!-- Product Hero Cards -->
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+          <!-- Category 1: Coffee -->
+          <div
+            class="group relative overflow-hidden rounded-3xl h-[600px] cursor-pointer shadow-2xl"
+            onclick="openModal('coffee')"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=1200&fit=crop"
+              alt="Premium Coffee & Specialty Drinks"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent flex flex-col justify-between p-10"
+            >
+              <div
+                class="inline-block px-4 py-2 gradient-yellow rounded-full w-auto self-start"
+              >
+                <span
+                  class="text-xs font-bold text-gray-900 uppercase tracking-widest"
+                  >Nationwide</span
+                >
+              </div>
+              <div class="flex flex-col gap-6 text-white w-full">
+                <div class="space-y-3">
+                  <h3 class="text-4xl md:text-5xl font-bold">
+                    Coffee & Specialty Drinks
+                  </h3>
+                  <p class="text-lg text-gray-200">
+                    Premium espresso bars for trade fairs and corporate events.
+                    Barista-crafted excellence with organic milk & plant-based
+                    options.
+                  </p>
+                </div>
+                <div
+                  class="inline-flex items-center gap-2 text-white font-semibold"
+                >
+                  <span>Learn More</span>
+                  <svg
+                    class="w-5 h-5 group-hover:translate-x-1 transition"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Dining/Catering -->
+          <div
+            class="group relative overflow-hidden rounded-3xl h-[600px] cursor-pointer shadow-2xl"
+            onclick="openModal('catering')"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&h=1200&fit=crop"
+              alt="Breakfast & Lunch Catering"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent flex flex-col justify-between p-10"
+            >
+              <div
+                class="inline-block px-4 py-2 gradient-yellow rounded-full w-auto self-start"
+              >
+                <span
+                  class="text-xs font-bold text-gray-900 uppercase tracking-widest"
+                  >Berlin+50km</span
+                >
+              </div>
+              <div class="flex flex-col gap-6 text-white w-full">
+                <div class="space-y-3">
+                  <h3 class="text-4xl md:text-5xl font-bold">
+                    Breakfast & Lunch Catering
+                  </h3>
+                  <p class="text-lg text-gray-200">
+                    Fresh, vibrant menus for meetings and workshops. Bowls,
+                    sandwiches, wraps & pastries with delivery or full-service.
+                  </p>
+                </div>
+                <div
+                  class="inline-flex items-center gap-2 text-white font-semibold"
+                >
+                  <span>Learn More</span>
+                  <svg
+                    class="w-5 h-5 group-hover:translate-x-1 transition"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section-spacing bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="mb-16">
+          <p
+            class="uppercase tracking-widest text-xs font-semibold text-yellow-500 mb-3"
+          >
+            Gallery
+          </p>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900">
+            Our Work in Action
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <!-- Gallery Image 1 -->
+          <div
+            class="group relative overflow-hidden rounded-xl h-64 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&h=400&fit=crop"
+              alt="Coffee Bar Setup"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4"
+            >
+              <p class="text-white font-semibold text-sm">Coffee Bar</p>
+            </div>
+          </div>
+
+          <!-- Gallery Image 2 -->
+          <div
+            class="group relative overflow-hidden rounded-xl h-64 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=400&h=400&fit=crop"
+              alt="Breakfast Spread"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4"
+            >
+              <p class="text-white font-semibold text-sm">Breakfast</p>
+            </div>
+          </div>
+
+          <!-- Gallery Image 3 -->
+          <div
+            class="group relative overflow-hidden rounded-xl h-64 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=400&h=400&fit=crop"
+              alt="Desserts"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4"
+            >
+              <p class="text-white font-semibold text-sm">Pastries</p>
+            </div>
+          </div>
+
+          <!-- Gallery Image 4 -->
+          <div
+            class="group relative overflow-hidden rounded-xl h-64 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=400&h=400&fit=crop"
+              alt="Event Setup"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4"
+            >
+              <p class="text-white font-semibold text-sm">Events</p>
+            </div>
+          </div>
+
+          <!-- Gallery Image 5 -->
+          <div
+            class="group relative overflow-hidden rounded-xl h-64 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop"
+              alt="Coffee Moments"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4"
+            >
+              <p class="text-white font-semibold text-sm">Coffee Art</p>
+            </div>
+          </div>
+
+          <!-- Gallery Image 6 -->
+          <div
+            class="group relative overflow-hidden rounded-xl h-64 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&h=400&fit=crop"
+              alt="Fresh Ingredients"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4"
+            >
+              <p class="text-white font-semibold text-sm">Fresh Ingredients</p>
+            </div>
+          </div>
+
+          <!-- Gallery Image 7 -->
+          <div
+            class="group relative overflow-hidden rounded-xl h-64 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop"
+              alt="Professional Service"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4"
+            >
+              <p class="text-white font-semibold text-sm">Catering</p>
+            </div>
+          </div>
+
+          <!-- Gallery Image 8 -->
+          <div
+            class="group relative overflow-hidden rounded-xl h-64 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&h=400&fit=crop"
+              alt="Food Presentation"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4"
+            >
+              <p class="text-white font-semibold text-sm">Presentation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="section-spacing gradient-yellow">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div
+          class="flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left"
+        >
+          <div class="space-y-4 max-w-2xl">
+            <p
+              class="text-sm uppercase tracking-widest font-semibold text-gray-800"
+            >
+              Ready to get started?
+            </p>
+            <h2
+              class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
+            >
+              Let's create something amazing together
+            </h2>
+            <p class="text-lg text-gray-800 pt-2">
+              Get your tailored quote in under a minute. We're here to make your
+              event unforgettable.
+            </p>
+          </div>
+          <a
+            href="inquiry.html"
+            class="px-10 py-5 rounded-full bg-gray-900 text-yellow-400 text-lg font-semibold hover:shadow-2xl hover:scale-105 transition whitespace-nowrap"
+            >Request Quote Now</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-900 text-gray-300">
+      <div class="section-spacing">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+          <div class="grid md:grid-cols-3 gap-12 mb-12">
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 mb-4">
+                <svg
+                  class="w-8 h-8"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="4" fill="#FFD54F" />
+                  <g stroke="#FFC107" stroke-width="1.2" stroke-linecap="round">
+                    <path d="M12 2v2" />
+                    <path d="M12 20v2" />
+                    <path d="M4 4l1.5 1.5" />
+                    <path d="M18.5 18.5L20 20" />
+                    <path d="M2 12h2" />
+                    <path d="M20 12h2" />
+                    <path d="M4 20l1.5-1.5" />
+                    <path d="M18.5 5.5L20 4" />
+                  </g>
+                </svg>
+                <span class="font-semibold text-white text-lg"
+                  >Simply Yellow Catering</span
+                >
+              </div>
+              <p class="text-gray-400 text-sm">
+                Premium coffee and catering for modern businesses and events.
+              </p>
+              <div class="flex gap-4 pt-2">
+                <a
+                  href="https://instagram.com"
+                  class="text-gray-400 hover:text-yellow-400 transition"
+                  aria-label="Instagram"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://facebook.com"
+                  class="text-gray-400 hover:text-yellow-400 transition"
+                  aria-label="Facebook"
+                >
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <h4
+                class="text-white font-semibold text-lg uppercase tracking-widest"
+              >
+                Contact
+              </h4>
+              <div class="space-y-3 text-sm">
+                <p>
+                  <span class="text-gray-500">Email:</span>
+                  <a
+                    href="mailto:hello@simplyyellow.de"
+                    class="text-yellow-400 hover:text-yellow-300"
+                    >hello@simplyyellow.de</a
+                  >
+                </p>
+                <p>
+                  <span class="text-gray-500">Phone:</span>
+                  <a
+                    href="tel:+49xxx"
+                    class="text-yellow-400 hover:text-yellow-300"
+                    >+49 (0) XXX XXXX</a
+                  >
+                </p>
+                <p>
+                  <a
+                    href="https://wa.me/49xxx"
+                    class="inline-flex items-center gap-2 text-yellow-400 hover:text-yellow-300 font-semibold"
+                    >WhatsApp us ></a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <h4
+                class="text-white font-semibold text-lg uppercase tracking-widest"
+              >
+                Quick Links
+              </h4>
+              <nav class="space-y-2 text-sm" aria-label="Footer navigation">
+                <a
+                  href="#home"
+                  class="block text-gray-400 hover:text-yellow-400 transition"
+                  >Home</a
+                >
+                <a
+                  href="#about"
+                  class="block text-gray-400 hover:text-yellow-400 transition"
+                  >About</a
+                >
+                <a
+                  href="#services"
+                  class="block text-gray-400 hover:text-yellow-400 transition"
+                  >Services</a
+                >
+                <a
+                  href="#gallery"
+                  class="block text-gray-400 hover:text-yellow-400 transition"
+                  >Gallery</a
+                >
+                <a
+                  href="inquiry.html"
+                  class="block text-gray-400 hover:text-yellow-400 transition"
+                  >Inquiry</a
+                >
+                <a
+                  href="impressum.html"
+                  class="block text-gray-400 hover:text-yellow-400 transition"
+                  >Impressum</a
+                >
+              </nav>
+            </div>
+          </div>
+
+          <div class="border-t border-gray-800 pt-8">
+            <p class="text-center text-sm text-gray-500">
+              2025 Simply Yellow Catering. All rights reserved. |
+              <a href="impressum.html" class="hover:text-yellow-400 transition"
+                >Legal</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a
+      href="https://wa.me/49XXXXXXXXX"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-float"
+      aria-label="Contact us on WhatsApp"
+    >
+      <div
+        class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition"
+      >
+        <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+          />
+        </svg>
+      </div>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button
+      id="scrollToTop"
+      class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 rounded-full shadow-2xl opacity-0 pointer-events-none transition-opacity duration-300 hover:scale-110 z-50 flex items-center justify-center"
+      aria-label="Scroll to top"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 10l7-7m0 0l7 7m-7-7v18"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Modal Popups -->
+    <!-- Coffee Modal -->
+    <div
+      id="coffeeModal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[999] hidden items-center justify-center p-4"
+      onclick="closeModal('coffee')"
+    >
+      <div
+        class="bg-gray-50 rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl modal-content"
+        onclick="event.stopPropagation()"
+      >
+        <!-- Close Button -->
+        <div class="sticky top-0 bg-transparent z-10 flex justify-end p-8 pb-6">
+          <button
+            onclick="closeModal('coffee')"
+            class="w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition"
+          >
+            <svg
+              class="w-5 h-5 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="px-8 md:px-20 pb-10 pt-0">
+          <!-- Title Section -->
+          <div class="mb-12">
+            <div
+              class="inline-block px-4 py-2 gradient-yellow rounded-full mb-6"
+            >
+              <span
+                class="text-xs font-bold text-gray-900 uppercase tracking-widest"
+                >🌍Nationwide</span
+              >
+            </div>
+            <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              Coffee & Specialty Drinks
+            </h2>
+            <p class="text-xl text-gray-600 leading-relaxed max-w-3xl">
+              Transform your events with premium espresso bars and
+              barista-crafted excellence. Perfect for trade fairs, corporate
+              events, and business meetings nationwide.
+            </p>
+          </div>
+
+          <!-- Image Carousel -->
+          <div class="relative mb-16 rounded-2xl overflow-hidden shadow-xl">
+            <div
+              id="coffeeCarousel"
+              class="flex transition-transform duration-500"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&h=600&fit=crop"
+                alt="Coffee 1"
+                class="w-full h-96 object-cover flex-shrink-0"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200&h=600&fit=crop"
+                alt="Coffee 2"
+                class="w-full h-96 object-cover flex-shrink-0"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200&h=600&fit=crop"
+                alt="Coffee 3"
+                class="w-full h-96 object-cover flex-shrink-0"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1200&h=600&fit=crop"
+                alt="Coffee 4"
+                class="w-full h-96 object-cover flex-shrink-0"
+              />
+            </div>
+            <!-- Carousel Controls -->
+            <button
+              onclick="prevSlide('coffee')"
+              class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition"
+            >
+              <svg
+                class="w-6 h-6 text-gray-900"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                ></path>
+              </svg>
+            </button>
+            <button
+              onclick="nextSlide('coffee')"
+              class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition"
+            >
+              <svg
+                class="w-6 h-6 text-gray-900"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </button>
+            <!-- Carousel Indicators -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              <button
+                onclick="goToSlide('coffee', 0)"
+                class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition coffee-indicator"
+                data-index="0"
+              ></button>
+              <button
+                onclick="goToSlide('coffee', 1)"
+                class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition coffee-indicator"
+                data-index="1"
+              ></button>
+              <button
+                onclick="goToSlide('coffee', 2)"
+                class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition coffee-indicator"
+                data-index="2"
+              ></button>
+              <button
+                onclick="goToSlide('coffee', 3)"
+                class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition coffee-indicator"
+                data-index="3"
+              ></button>
+            </div>
+          </div>
+
+          <!-- Service Features Grid -->
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <!-- Feature 1 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md">
+              <div
+                class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-7 h-7 text-yellow-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Premium Coffee Selection
+              </h3>
+              <ul class="space-y-3 text-gray-600 text-lg">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Espresso, Cappuccino, Flat White</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Americano & Iced Coffee</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Specialty pour-over options</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md">
+              <div
+                class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-7 h-7 text-yellow-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Customizable Options
+              </h3>
+              <ul class="space-y-3 text-gray-600 text-lg">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Organic & regular milk</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Plant-based: Oat, Soy, Almond</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Sugar-free & flavor syrups</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md">
+              <div
+                class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-7 h-7 text-yellow-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Specialty Beverages
+              </h3>
+              <ul class="space-y-3 text-gray-600 text-lg">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Premium Matcha Latte</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Specialty tea selection</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Custom branded blends</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md">
+              <div
+                class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-7 h-7 text-yellow-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Professional Service
+              </h3>
+              <ul class="space-y-3 text-gray-600 text-lg">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Experienced barista team</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Premium equipment setup</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Full event support</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div
+            class="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-2xl p-10 text-center shadow-lg"
+          >
+            <h3 class="text-3xl font-bold text-gray-900 mb-4">
+              Ready to Elevate Your Event?
+            </h3>
+            <p class="text-gray-800 mb-8 text-xl">
+              Get a custom quote tailored to your needs
+            </p>
+            <a
+              href="inquiry.html?service=coffee"
+              class="inline-flex items-center gap-2 px-10 py-5 bg-gray-900 text-white font-bold rounded-full hover:bg-gray-800 transition shadow-lg text-lg"
+            >
+              <span>Request a Quote</span>
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Catering Modal -->
+    <div
+      id="cateringModal"
+      class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[999] hidden items-center justify-center p-4"
+      onclick="closeModal('catering')"
+    >
+      <div
+        class="bg-gray-50 rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl modal-content"
+        onclick="event.stopPropagation()"
+      >
+        <!-- Close Button -->
+        <div class="sticky top-0 bg-transparent z-10 flex justify-end p-8 pb-6">
+          <button
+            onclick="closeModal('catering')"
+            class="w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 flex items-center justify-center transition"
+          >
+            <svg
+              class="w-5 h-5 text-gray-700"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="px-8 md:px-20 pb-10 pt-0">
+          <!-- Title Section -->
+          <div class="mb-12">
+            <div
+              class="inline-block px-4 py-2 gradient-yellow rounded-full mb-6"
+            >
+              <span
+                class="text-xs font-bold text-gray-900 uppercase tracking-widest"
+                >📍Berlin+50km</span
+              >
+            </div>
+            <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              Breakfast & Lunch Catering
+            </h2>
+            <p class="text-xl text-gray-600 leading-relaxed max-w-3xl">
+              Fresh, vibrant menus designed for meetings, workshops, and
+              corporate events. Choose between convenient delivery or
+              full-service catering with our professional staff.
+            </p>
+          </div>
+
+          <!-- Image Carousel -->
+          <div class="relative mb-16 rounded-2xl overflow-hidden shadow-xl">
+            <div
+              id="cateringCarousel"
+              class="flex transition-transform duration-500"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&h=600&fit=crop"
+                alt="Catering 1"
+                class="w-full h-96 object-cover flex-shrink-0"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=1200&h=600&fit=crop"
+                alt="Catering 2"
+                class="w-full h-96 object-cover flex-shrink-0"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=1200&h=600&fit=crop"
+                alt="Catering 3"
+                class="w-full h-96 object-cover flex-shrink-0"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=1200&h=600&fit=crop"
+                alt="Catering 4"
+                class="w-full h-96 object-cover flex-shrink-0"
+              />
+            </div>
+            <!-- Carousel Controls -->
+            <button
+              onclick="prevSlide('catering')"
+              class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition"
+            >
+              <svg
+                class="w-6 h-6 text-gray-900"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                ></path>
+              </svg>
+            </button>
+            <button
+              onclick="nextSlide('catering')"
+              class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition"
+            >
+              <svg
+                class="w-6 h-6 text-gray-900"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+            </button>
+            <!-- Carousel Indicators -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+              <button
+                onclick="goToSlide('catering', 0)"
+                class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition catering-indicator"
+                data-index="0"
+              ></button>
+              <button
+                onclick="goToSlide('catering', 1)"
+                class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition catering-indicator"
+                data-index="1"
+              ></button>
+              <button
+                onclick="goToSlide('catering', 2)"
+                class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition catering-indicator"
+                data-index="2"
+              ></button>
+              <button
+                onclick="goToSlide('catering', 3)"
+                class="w-2 h-2 rounded-full bg-white/60 hover:bg-white transition catering-indicator"
+                data-index="3"
+              ></button>
+            </div>
+          </div>
+
+          <!-- Service Features Grid -->
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <!-- Feature 1 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md">
+              <div
+                class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-7 h-7 text-yellow-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Fresh Food Selection
+              </h3>
+              <ul class="space-y-3 text-gray-600 text-lg">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Gourmet bowls & salads</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Artisan sandwiches & wraps</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Fresh pastries & baked goods</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md">
+              <div
+                class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-7 h-7 text-yellow-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Dietary Accommodations
+              </h3>
+              <ul class="space-y-3 text-gray-600 text-lg">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Vegetarian & vegan options</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Gluten-free alternatives</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Allergen-friendly menus</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md">
+              <div
+                class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-7 h-7 text-yellow-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Seasonal Specials
+              </h3>
+              <ul class="space-y-3 text-gray-600 text-lg">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Fresh seasonal desserts</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Local ingredient focus</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Rotating menu items</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="bg-white rounded-2xl p-8 shadow-md">
+              <div
+                class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-7 h-7 text-yellow-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                Flexible Service
+              </h3>
+              <ul class="space-y-3 text-gray-600 text-lg">
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Delivery to your location</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Full-service with staff</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg
+                    class="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>Complete setup & cleanup</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div
+            class="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-2xl p-10 text-center shadow-lg"
+          >
+            <h3 class="text-3xl font-bold text-gray-900 mb-4">
+              Ready to Delight Your Team?
+            </h3>
+            <p class="text-gray-800 mb-8 text-xl">
+              Get a personalized catering proposal
+            </p>
+            <a
+              href="inquiry.html?service=catering"
+              class="inline-flex items-center gap-2 px-10 py-5 bg-gray-900 text-white font-bold rounded-full hover:bg-gray-800 transition shadow-lg text-lg"
+            >
+              <span>Request a Quote</span>
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("menuBtn").addEventListener("click", function () {
+        document.getElementById("navMenu").classList.toggle("hidden");
+      });
+
+      // Language Switcher
+      let currentLang = "en";
+
+      function toggleLang() {
+        const langDisplay = document.getElementById("current-lang");
+
+        if (currentLang === "en") {
+          currentLang = "de";
+          langDisplay.textContent = "DE";
+          document.documentElement.lang = "de";
+          // Add German translations here
+          updateContent("de");
+        } else {
+          currentLang = "en";
+          langDisplay.textContent = "EN";
+          document.documentElement.lang = "en";
+          // Add English translations here
+          updateContent("en");
+        }
+      }
+
+      function updateContent(lang) {
+        // Example: You can add translation logic here
+        // This is where you'd swap text content based on language
+        console.log("Language switched to: " + lang);
+      }
+
+      // Scroll to Top Button
+      const scrollToTopBtn = document.getElementById("scrollToTop");
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+          scrollToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+        } else {
+          scrollToTopBtn.classList.add("opacity-0", "pointer-events-none");
+        }
+      });
+
+      scrollToTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Mobile Menu Toggle Function
+      function toggleMobileMenu() {
+        const navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("hidden");
+      }
+
+      // Modal Functions
+      let coffeeSlideIndex = 0;
+      let cateringSlideIndex = 0;
+
+      function openModal(type) {
+        const modal = document.getElementById(type + "Modal");
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.body.style.overflow = "hidden";
+        updateIndicators(type);
+      }
+
+      function closeModal(type) {
+        const modal = document.getElementById(type + "Modal");
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        document.body.style.overflow = "auto";
+      }
+
+      function nextSlide(type) {
+        const carousel = document.getElementById(type + "Carousel");
+        const totalSlides = carousel.children.length;
+
+        if (type === "coffee") {
+          coffeeSlideIndex = (coffeeSlideIndex + 1) % totalSlides;
+          carousel.style.transform = `translateX(-${coffeeSlideIndex * 100}%)`;
+        } else {
+          cateringSlideIndex = (cateringSlideIndex + 1) % totalSlides;
+          carousel.style.transform = `translateX(-${
+            cateringSlideIndex * 100
+          }%)`;
+        }
+        updateIndicators(type);
+      }
+
+      function prevSlide(type) {
+        const carousel = document.getElementById(type + "Carousel");
+        const totalSlides = carousel.children.length;
+
+        if (type === "coffee") {
+          coffeeSlideIndex = (coffeeSlideIndex - 1 + totalSlides) % totalSlides;
+          carousel.style.transform = `translateX(-${coffeeSlideIndex * 100}%)`;
+        } else {
+          cateringSlideIndex =
+            (cateringSlideIndex - 1 + totalSlides) % totalSlides;
+          carousel.style.transform = `translateX(-${
+            cateringSlideIndex * 100
+          }%)`;
+        }
+        updateIndicators(type);
+      }
+
+      function goToSlide(type, index) {
+        const carousel = document.getElementById(type + "Carousel");
+
+        if (type === "coffee") {
+          coffeeSlideIndex = index;
+          carousel.style.transform = `translateX(-${coffeeSlideIndex * 100}%)`;
+        } else {
+          cateringSlideIndex = index;
+          carousel.style.transform = `translateX(-${
+            cateringSlideIndex * 100
+          }%)`;
+        }
+        updateIndicators(type);
+      }
+
+      function updateIndicators(type) {
+        const indicators = document.querySelectorAll("." + type + "-indicator");
+        const currentIndex =
+          type === "coffee" ? coffeeSlideIndex : cateringSlideIndex;
+
+        indicators.forEach((indicator, index) => {
+          if (index === currentIndex) {
+            indicator.classList.add("bg-white");
+            indicator.classList.remove("bg-white/60");
+          } else {
+            indicator.classList.add("bg-white/60");
+            indicator.classList.remove("bg-white");
+          }
+        });
+      }
+
+      // Close modal on Escape key
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeModal("coffee");
+          closeModal("catering");
+        }
+      });
+    </script>
+  </body>
+</html>
