@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -20,7 +20,7 @@
         display: none; /* Chrome, Safari, Opera */
       }
       body {
-        font-family: "Inter", sans-serif;
+        font-family: "DM Sans", sans-serif;
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* IE and Edge */
       }
@@ -33,7 +33,8 @@
       h4,
       h5,
       h6 {
-        font-family: "Poppins", sans-serif;
+        font-family: "Space Grotesk", sans-serif;
+        letter-spacing: -0.01em;
       }
       .gradient-yellow {
         background: linear-gradient(135deg, #ffd54f 0%, #ffc107 100%);
@@ -119,21 +120,19 @@
             onclick="toggleLang()"
             class="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full hover:border-yellow-400 transition group"
             aria-label="Switch language"
+            type="button"
           >
-            <svg
-              class="w-4 h-4 text-gray-600 group-hover:text-yellow-500"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            <span
+              id="current-flag"
+              class="text-lg"
+              role="img"
+              aria-hidden="true"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
-              ></path>
-            </svg>
-            <span id="current-lang" class="text-sm font-semibold text-gray-700"
+              🇬🇧
+            </span>
+            <span
+              id="current-lang"
+              class="text-sm font-semibold text-gray-700 tracking-wide"
               >EN</span
             >
           </button>
@@ -142,7 +141,7 @@
             href="inquiry.html"
             class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 text-sm font-bold hover:scale-105 transition-transform duration-200"
           >
-            <span>Request Quote</span>
+            <span>Get an Offer</span>
           </a>
         </div>
 
@@ -203,7 +202,7 @@
           <a
             href="inquiry.html"
             class="mt-3 px-6 py-2.5 rounded-full bg-gradient-yellow text-gray-900 font-semibold text-center"
-            >Request Quote</a
+            >Get an Offer</a
           >
         </div>
       </nav>
@@ -297,197 +296,61 @@
                 </div>
 
                 <h3 class="text-base font-semibold mb-4 text-gray-800">
-                  Haben Sie Wünsche, auf die wir achten sollen?
+                  Coffee oder Food Catering? (Mehrfachauswahl möglich)
                 </h3>
-                <div class="flex flex-wrap gap-4 mb-6">
-                  <label class="flex items-center gap-2 text-sm cursor-pointer">
-                    <input
-                      type="checkbox"
-                      class="w-5 h-5 rounded border-gray-300 text-yellow-500 focus:ring-yellow-400"
-                      onchange="toggleMulti('dietary','vegetarian')"
-                    />
-                    <span class="flex items-center gap-1">
-                      <svg
-                        class="w-4 h-4 text-green-600"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"
-                        />
-                      </svg>
-                      teilweise vegetarisch
-                    </span>
-                  </label>
-                  <label class="flex items-center gap-2 text-sm cursor-pointer">
-                    <input
-                      type="checkbox"
-                      class="w-5 h-5 rounded border-gray-300 text-yellow-500 focus:ring-yellow-400"
-                      onchange="toggleMulti('dietary','vegan')"
-                    />
-                    <span class="flex items-center gap-1">
-                      <svg
-                        class="w-4 h-4 text-green-600"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"
-                        />
-                      </svg>
-                      teilweise vegan
-                    </span>
-                  </label>
-                  <label class="flex items-center gap-2 text-sm cursor-pointer">
-                    <input
-                      type="checkbox"
-                      class="w-5 h-5 rounded border-gray-300 text-yellow-500 focus:ring-yellow-400"
-                      onchange="toggleMulti('dietary','all_veg')"
-                    />
-                    <span class="flex items-center gap-1">
-                      <svg
-                        class="w-4 h-4 text-green-600"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2h2v2zm0-4H9V5h2v4z"
-                        />
-                      </svg>
-                      vegetarisch/vegan
-                    </span>
-                  </label>
-                </div>
-
-                <h3 class="text-base font-semibold mb-4 text-gray-800">
-                  Benötigen Sie Servicepersonal?*
-                </h3>
-                <div class="flex gap-3 mb-6">
+                <div class="grid grid-cols-2 gap-3 mb-6">
                   <button
                     type="button"
-                    class="yes-no-btn"
-                    data-field="needStaff"
-                    data-value="Ja"
-                    onclick="selectYesNo(this)"
+                    class="multi-card-btn"
+                    data-field="serviceFocus"
+                    data-value="Coffee Catering"
+                    onclick="toggleCardSelection(this)"
                   >
-                    Ja
+                    <span class="text-3xl mb-2">☕</span>
+                    <span class="font-semibold">Coffee Catering</span>
                   </button>
                   <button
                     type="button"
-                    class="yes-no-btn"
-                    data-field="needStaff"
-                    data-value="Nein"
-                    onclick="selectYesNo(this)"
+                    class="multi-card-btn"
+                    data-field="serviceFocus"
+                    data-value="Food Catering"
+                    onclick="toggleCardSelection(this)"
                   >
-                    Nein
-                  </button>
-                  <button
-                    type="button"
-                    class="yes-no-btn"
-                    data-field="needStaff"
-                    data-value="Nicht sicher"
-                    onclick="selectYesNo(this)"
-                  >
-                    Nicht sicher
+                    <span class="text-3xl mb-2">🥗</span>
+                    <span class="font-semibold">Food Catering</span>
                   </button>
                 </div>
 
                 <h3 class="text-base font-semibold mb-4 text-gray-800">
-                  Benötigen Sie Getränke?*
+                  Getränke, Breakfast, Lunch
                 </h3>
-                <div class="flex gap-3 mb-6">
+                <div class="flex flex-wrap gap-3">
                   <button
                     type="button"
-                    class="yes-no-btn"
-                    data-field="needDrinks"
-                    data-value="Ja"
-                    onclick="selectYesNo(this)"
+                    class="pill-btn"
+                    data-field="experienceAddOns"
+                    data-value="Getränke"
+                    onclick="togglePill(this)"
                   >
-                    Ja
+                    Getränke
                   </button>
                   <button
                     type="button"
-                    class="yes-no-btn"
-                    data-field="needDrinks"
-                    data-value="Nein"
-                    onclick="selectYesNo(this)"
+                    class="pill-btn"
+                    data-field="experienceAddOns"
+                    data-value="Breakfast"
+                    onclick="togglePill(this)"
                   >
-                    Nein
+                    Breakfast
                   </button>
                   <button
                     type="button"
-                    class="yes-no-btn"
-                    data-field="needDrinks"
-                    data-value="Nicht sicher"
-                    onclick="selectYesNo(this)"
+                    class="pill-btn"
+                    data-field="experienceAddOns"
+                    data-value="Lunch"
+                    onclick="togglePill(this)"
                   >
-                    Nicht sicher
-                  </button>
-                </div>
-
-                <h3 class="text-base font-semibold mb-4 text-gray-800">
-                  Benötigen Sie Equipment?*
-                </h3>
-                <div class="flex gap-3 mb-6">
-                  <button
-                    type="button"
-                    class="yes-no-btn"
-                    data-field="needEquipment"
-                    data-value="Ja"
-                    onclick="selectYesNo(this)"
-                  >
-                    Ja
-                  </button>
-                  <button
-                    type="button"
-                    class="yes-no-btn"
-                    data-field="needEquipment"
-                    data-value="Nein"
-                    onclick="selectYesNo(this)"
-                  >
-                    Nein
-                  </button>
-                  <button
-                    type="button"
-                    class="yes-no-btn"
-                    data-field="needEquipment"
-                    data-value="Nicht sicher"
-                    onclick="selectYesNo(this)"
-                  >
-                    Nicht sicher
-                  </button>
-                </div>
-
-                <h3 class="text-base font-semibold mb-4 text-gray-800">
-                  Ist die Location barrierefrei?*
-                </h3>
-                <div class="flex gap-3">
-                  <button
-                    type="button"
-                    class="yes-no-btn"
-                    data-field="accessible"
-                    data-value="Ja"
-                    onclick="selectYesNo(this)"
-                  >
-                    Ja
-                  </button>
-                  <button
-                    type="button"
-                    class="yes-no-btn"
-                    data-field="accessible"
-                    data-value="Nein"
-                    onclick="selectYesNo(this)"
-                  >
-                    Nein
-                  </button>
-                  <button
-                    type="button"
-                    class="yes-no-btn"
-                    data-field="accessible"
-                    data-value="Nicht sicher"
-                    onclick="selectYesNo(this)"
-                  >
-                    Nicht sicher
+                    Lunch
                   </button>
                 </div>
               </div>
@@ -507,7 +370,7 @@
                     <input
                       type="date"
                       class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-                      onchange="updateSummary('date', this.value)"
+                      onchange="updateSummary('eventDate', this.value)"
                     />
                   </div>
                   <div>
@@ -518,62 +381,109 @@
                     <input
                       type="time"
                       class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-                      onchange="updateSummary('time', this.value)"
+                      onchange="updateSummary('eventTime', this.value)"
                     />
                   </div>
                 </div>
 
-                <h3 class="text-base font-semibold mb-4 text-gray-800">
-                  Anzahl der Gäste und Budget
-                </h3>
-                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
                   <div>
-                    <label class="block text-sm font-medium mb-2 text-gray-600"
-                      >Anzahl Personen</label
+                    <label
+                      class="block text-sm font-semibold mb-2 text-gray-700"
+                      >Gästeanzahl</label
                     >
                     <input
                       type="number"
                       min="1"
-                      placeholder="z.B. 50"
                       class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-                      oninput="updateSummary('guests', this.value)"
+                      placeholder="z. B. 80"
+                      oninput="updateSummary('guestCount', this.value)"
                     />
                   </div>
                   <div>
-                    <label class="block text-sm font-medium mb-2 text-gray-600"
-                      >Budget p. P. (netto)</label
+                    <label
+                      class="block text-sm font-semibold mb-2 text-gray-700"
+                      >Location – PLZ</label
                     >
                     <input
-                      type="number"
-                      min="0"
-                      step="0.5"
-                      placeholder="€"
+                      type="text"
                       class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-                      oninput="updateSummary('budgetPP', this.value)"
-                    />
-                  </div>
-                  <div>
-                    <label class="block text-sm font-medium mb-2 text-gray-600"
-                      >Gesamtbudget (netto)</label
-                    >
-                    <input
-                      type="number"
-                      min="0"
-                      placeholder="€"
-                      class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-                      oninput="updateSummary('budgetTotal', this.value)"
+                      placeholder="z. B. 10179"
+                      oninput="updateSummary('postalCode', this.value)"
                     />
                   </div>
                 </div>
+              </div>
+              <!-- STEP 3: Menu & Needs -->
+              <div class="form-step hidden" data-step="3">
+                <h2 class="text-xl font-bold mb-6 text-gray-900">
+                  Menü & Anforderungen
+                </h2>
 
                 <h3 class="text-base font-semibold mb-4 text-gray-800">
-                  Ist Buffet-Stellfläche vorhanden?*
+                  Menüform (Mehrfachauswahl möglich)
+                </h3>
+                <div class="grid md:grid-cols-2 gap-3 mb-6">
+                  <button
+                    type="button"
+                    class="multi-card-btn"
+                    data-field="menuFormats"
+                    data-value="Mobilstation"
+                    onclick="toggleCardSelection(this)"
+                  >
+                    <span class="text-3xl mb-2">🚚</span>
+                    <span class="font-semibold">Mobilstation</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="multi-card-btn"
+                    data-field="menuFormats"
+                    data-value="Buffet (Selbstbedienung)"
+                    onclick="toggleCardSelection(this)"
+                  >
+                    <span class="text-3xl mb-2">🍽️</span>
+                    <span class="font-semibold">Buffet (Selbstbedienung)</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="multi-card-btn"
+                    data-field="menuFormats"
+                    data-value="Fingerfood"
+                    onclick="toggleCardSelection(this)"
+                  >
+                    <span class="text-3xl mb-2">🥪</span>
+                    <span class="font-semibold">Fingerfood</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="multi-card-btn"
+                    data-field="menuFormats"
+                    data-value="Live-Station"
+                    onclick="toggleCardSelection(this)"
+                  >
+                    <span class="text-3xl mb-2">🔥</span>
+                    <span class="font-semibold">Live-Station</span>
+                  </button>
+                </div>
+
+                <h3 class="text-base font-semibold mb-4 text-gray-800">
+                  Hast du besondere Wünsche oder Anforderungen?
+                </h3>
+                <textarea
+                  class="w-full border-2 border-gray-300 rounded-2xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 mb-6"
+                  rows="4"
+                  placeholder="z. B. vegetarisch, vegan, glutenfrei, Allergien, Branding, etc."
+                  oninput="updateSummary('specialRequests', this.value)"
+                ></textarea>
+
+                <h3 class="text-base font-semibold mb-4 text-gray-800">
+                  Benötigst du zusätzliches Personal?
                 </h3>
                 <div class="flex gap-3">
                   <button
                     type="button"
                     class="yes-no-btn"
-                    data-field="buffetSpace"
+                    data-field="needStaff"
                     data-value="Ja"
                     onclick="selectYesNo(this)"
                   >
@@ -582,7 +492,7 @@
                   <button
                     type="button"
                     class="yes-no-btn"
-                    data-field="buffetSpace"
+                    data-field="needStaff"
                     data-value="Nein"
                     onclick="selectYesNo(this)"
                   >
@@ -591,7 +501,7 @@
                   <button
                     type="button"
                     class="yes-no-btn"
-                    data-field="buffetSpace"
+                    data-field="needStaff"
                     data-value="Nicht sicher"
                     onclick="selectYesNo(this)"
                   >
@@ -599,113 +509,74 @@
                   </button>
                 </div>
               </div>
-
-              <!-- STEP 3: Location & Contact -->
-              <div class="form-step hidden" data-step="3">
-                <h2 class="text-xl font-bold mb-6 text-gray-900">
-                  Kontaktdaten & Standort
-                </h2>
-
-                <div class="grid md:grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <label
-                      class="block text-sm font-semibold mb-2 text-gray-700"
-                      >Name *</label
-                    >
-                    <input
-                      type="text"
-                      required
-                      class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-                      oninput="updateSummary('name', this.value)"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      class="block text-sm font-semibold mb-2 text-gray-700"
-                      >Email *</label
-                    >
-                    <input
-                      type="email"
-                      required
-                      class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-                      oninput="updateSummary('email', this.value)"
-                    />
-                  </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-4 mb-6">
-                  <div>
-                    <label
-                      class="block text-sm font-semibold mb-2 text-gray-700"
-                      >Telefon (empfohlen)</label
-                    >
-                    <input
-                      type="tel"
-                      class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-                      oninput="updateSummary('phone', this.value)"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      class="block text-sm font-semibold mb-2 text-gray-700"
-                      >Firma (optional)</label
-                    >
-                    <input
-                      type="text"
-                      class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-                      oninput="updateSummary('company', this.value)"
-                    />
-                  </div>
-                </div>
-
-                <div class="mb-6">
-                  <label class="block text-sm font-semibold mb-2 text-gray-700"
-                    >Stadt/Ort *</label
-                  >
-                  <input
-                    type="text"
-                    required
-                    placeholder="Berlin, Hamburg..."
-                    class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-                    oninput="updateSummary('city', this.value)"
-                  />
-                </div>
-              </div>
-
-              <!-- STEP 4: Additional Notes -->
+              <!-- STEP 4: Contact Details -->
               <div class="form-step hidden" data-step="4">
                 <h2 class="text-xl font-bold mb-6 text-gray-900">
                   Fast geschafft!
                 </h2>
 
-                <div class="mb-6">
-                  <label class="block text-sm font-semibold mb-2 text-gray-700">
-                    Besondere Wünsche oder Anmerkungen
-                  </label>
-                  <textarea
-                    rows="6"
-                    class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
-                    placeholder="Erzählen Sie uns von besonderen Anforderungen, Zeitplänen, Stilvorlieben..."
-                  ></textarea>
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <label class="block text-sm font-semibold mb-2 text-gray-700">
+                      Unternehmen / Organisation
+                    </label>
+                    <input
+                      type="text"
+                      class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+                      placeholder="Optional"
+                      oninput="updateSummary('company', this.value)"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-semibold mb-2 text-gray-700">
+                      Dein Name*
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+                      placeholder="Vor- und Nachname"
+                      oninput="updateSummary('name', this.value)"
+                    />
+                  </div>
                 </div>
 
-                <div
-                  class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4"
-                >
+                <div class="grid md:grid-cols-2 gap-4 mb-6">
+                  <div>
+                    <label class="block text-sm font-semibold mb-2 text-gray-700">
+                      E-Mail*
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+                      placeholder="name@unternehmen.de"
+                      oninput="updateSummary('email', this.value)"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-semibold mb-2 text-gray-700">
+                      Telefonnummer*
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      class="w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"
+                      placeholder="+49"
+                      oninput="updateSummary('phone', this.value)"
+                    />
+                  </div>
+                </div>
+
+                <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-4">
                   <p class="text-sm text-gray-700 mb-2">
-                    <strong
-                      >📋 Bitte beantworten Sie alle mit einem Sternchen*
-                      gekennzeichneten Fragen.</strong
-                    >
+                    <strong>📋 Wir melden uns innerhalb von 24 Stunden mit einem Angebot.</strong>
                   </p>
                   <p class="text-xs text-gray-600">
-                    Dies ist eine unverbindliche Anfrage. Wir melden uns
-                    innerhalb von 24 Stunden mit einem maßgeschneiderten Angebot
-                    bei Ihnen.
+                    Mit dem Absenden bestätigst du, dass wir deine Angaben zur Kontaktaufnahme verwenden dürfen.
                   </p>
                 </div>
               </div>
-
               <!-- Navigation Buttons -->
               <div
                 class="flex items-center justify-between gap-4 pt-6 border-t border-gray-200"
@@ -756,10 +627,10 @@
                 Prefer to reach us directly?
               </p>
               <a
-                href="https://wa.me/49xxx"
+                href="https://wa.me/4915785147523"
                 class="inline-flex w-full justify-center px-4 py-2.5 rounded-lg gradient-yellow text-gray-900 font-semibold text-xs hover:shadow-lg transition"
               >
-                WhatsApp us
+                WhatsApp: +49 1578 5147523
               </a>
               <p class="text-xs text-gray-500 text-center mt-3">
                 hello@simplyyellow.de
@@ -789,27 +660,39 @@
         navMenu.classList.toggle("hidden");
       }
 
+      // Language switcher
+      let currentLang = "en";
+      const langDisplay = document.getElementById("current-lang");
+      const langFlag = document.getElementById("current-flag");
+
+      function toggleLang() {
+        if (currentLang === "en") {
+          currentLang = "de";
+          langDisplay.textContent = "DE";
+          langFlag.textContent = "🇩🇪";
+          document.documentElement.lang = "de";
+        } else {
+          currentLang = "en";
+          langDisplay.textContent = "EN";
+          langFlag.textContent = "🇬🇧";
+          document.documentElement.lang = "en";
+        }
+      }
+
       let currentStepNum = 1;
       const totalSteps = 4;
 
       const state = {
         eventType: "",
-        dietary: [],
+        serviceFocus: [],
+        experienceAddOns: [],
+        eventDate: "",
+        eventTime: "",
+        guestCount: "",
+        postalCode: "",
+        menuFormats: [],
+        specialRequests: "",
         needStaff: "",
-        needDrinks: "",
-        needEquipment: "",
-        accessible: "",
-        buffetSpace: "",
-        date: "",
-        time: "",
-        city: "",
-        guests: "",
-        budgetPP: "",
-        budgetTotal: "",
-        services: [],
-        diet: "",
-        staff: "",
-        budget: "",
         company: "",
         name: "",
         email: "",
@@ -931,6 +814,40 @@
         updateSummary(field, value);
       }
 
+      // Handle multi-select cards
+      function toggleCardSelection(btn) {
+        const field = btn.dataset.field;
+        const value = btn.dataset.value;
+        const isActive = !btn.classList.contains("active-card");
+
+        btn.classList.toggle("active-card", isActive);
+        btn.classList.toggle("border-yellow-400", isActive);
+        btn.classList.toggle("bg-yellow-50", isActive);
+        btn.classList.toggle("ring-2", isActive);
+        btn.classList.toggle("ring-yellow-400", isActive);
+        btn.classList.toggle("text-gray-900", isActive);
+        btn.classList.toggle("text-gray-700", !isActive);
+
+        toggleMulti(field, value);
+      }
+
+      // Handle pill toggles
+      function togglePill(btn) {
+        const field = btn.dataset.field;
+        const value = btn.dataset.value;
+        const isActive = !btn.classList.contains("pill-active");
+
+        btn.classList.toggle("pill-active", isActive);
+        btn.classList.toggle("bg-gray-900", isActive);
+        btn.classList.toggle("text-white", isActive);
+        btn.classList.toggle("border-gray-900", isActive);
+        btn.classList.toggle("border-gray-300", !isActive);
+        btn.classList.toggle("bg-white", !isActive);
+        btn.classList.toggle("text-gray-700", !isActive);
+
+        toggleMulti(field, value);
+      }
+
       function renderSummary() {
         const el = document.getElementById("summaryContent");
         const lines = [];
@@ -943,75 +860,64 @@
           '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>';
         const peopleIcon =
           '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>';
-        const moneyIcon =
-          '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
         const foodIcon =
           '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>';
-        const serviceIcon =
-          '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>';
         const drinkIcon =
           '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>';
-        const toolIcon =
-          '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>';
+        const serviceIcon =
+          '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>';
         const userIcon =
           '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>';
         const buildingIcon =
           '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>';
         const eventIcon =
           '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>';
+        const noteIcon =
+          '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-6 4h6m2 4H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/></svg>';
+        const mailIcon =
+          '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12H8m8 4H8m-2 6h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>';
+        const phoneIcon =
+          '<svg class="w-4 h-4 text-yellow-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3l2 5-2 1a11 11 0 005 5l1.5-2 4.5 1.5v3a2 2 0 01-2 2h-1C9.94 18.5 5.5 14.06 4 9V8a2 2 0 012-2H6z"/></svg>';
 
         if (state.eventType)
           lines.push(
             `<div class="flex items-center gap-2">${eventIcon}<strong>${state.eventType}</strong></div>`
           );
-        if (state.date)
+        if (state.serviceFocus.length)
           lines.push(
-            `<div class="flex items-center gap-2">${calendarIcon}<span>${state.date}</span></div>`
+            `<div class="flex items-center gap-2">${drinkIcon}<span>${state.serviceFocus.join(", ")}</span></div>`
           );
-        if (state.time)
+        if (state.experienceAddOns.length)
           lines.push(
-            `<div class="flex items-center gap-2">${clockIcon}<span>${state.time}</span></div>`
+            `<div class="flex items-center gap-2">${foodIcon}<span>${state.experienceAddOns.join(", ")}</span></div>`
           );
-        if (state.city)
+        if (state.eventDate)
           lines.push(
-            `<div class="flex items-center gap-2">${locationIcon}<span>${state.city}</span></div>`
+            `<div class="flex items-center gap-2">${calendarIcon}<span>${state.eventDate}</span></div>`
           );
-        if (state.guests)
+        if (state.eventTime)
           lines.push(
-            `<div class="flex items-center gap-2">${peopleIcon}<span>${state.guests} Gäste</span></div>`
+            `<div class="flex items-center gap-2">${clockIcon}<span>${state.eventTime}</span></div>`
           );
-        if (state.budgetPP)
+        if (state.guestCount)
           lines.push(
-            `<div class="flex items-center gap-2">${moneyIcon}<span>${state.budgetPP}€ p.P.</span></div>`
+            `<div class="flex items-center gap-2">${peopleIcon}<span>${state.guestCount} Gäste</span></div>`
           );
-        if (state.budgetTotal)
+        if (state.menuFormats.length)
           lines.push(
-            `<div class="flex items-center gap-2">${moneyIcon}<span>${state.budgetTotal}€ gesamt</span></div>`
+            `<div class="flex items-center gap-2">${foodIcon}<span>Menü: ${state.menuFormats.join(", ")}</span></div>`
           );
-        if (state.dietary.length) {
-          const dietaryLabels = {
-            vegetarian: "teilw. vegetarisch",
-            vegan: "teilw. vegan",
-            all_veg: "vegetarisch/vegan",
-          };
-          const displayText = state.dietary
-            .map((d) => dietaryLabels[d] || d)
-            .join(", ");
+        if (state.specialRequests)
           lines.push(
-            `<div class="flex items-center gap-2">${foodIcon}<span>${displayText}</span></div>`
+            `<div class="flex items-center gap-2">${noteIcon}<span>${state.specialRequests}</span></div>`
           );
-        }
+        if (state.postalCode)
+          lines.push(
+            `<div class="flex items-center gap-2">${locationIcon}<span>PLZ ${state.postalCode}</span></div>`
+          );
         if (state.needStaff)
           lines.push(
             `<div class="flex items-center gap-2">${serviceIcon}<span>Personal: ${state.needStaff}</span></div>`
-          );
-        if (state.needDrinks)
-          lines.push(
-            `<div class="flex items-center gap-2">${drinkIcon}<span>Getränke: ${state.needDrinks}</span></div>`
-          );
-        if (state.needEquipment)
-          lines.push(
-            `<div class="flex items-center gap-2">${toolIcon}<span>Equipment: ${state.needEquipment}</span></div>`
           );
         if (state.name)
           lines.push(
@@ -1020,6 +926,14 @@
         if (state.company)
           lines.push(
             `<div class="flex items-center gap-2">${buildingIcon}<span>${state.company}</span></div>`
+          );
+        if (state.email)
+          lines.push(
+            `<div class="flex items-center gap-2">${mailIcon}<span>${state.email}</span></div>`
+          );
+        if (state.phone)
+          lines.push(
+            `<div class="flex items-center gap-2">${phoneIcon}<span>${state.phone}</span></div>`
           );
 
         if (lines.length === 0) {
@@ -1035,6 +949,10 @@
         }
       }
 
+      function updateSummary(key, value) {
+        state[key] = value;
+        renderSummary();
+      }
       function updateSummary(key, value) {
         state[key] = value;
         renderSummary();
@@ -1076,6 +994,41 @@
             "transition-all",
             "cursor-pointer",
             "text-center"
+          );
+        });
+        document.querySelectorAll(".multi-card-btn").forEach((btn) => {
+          btn.classList.add(
+            "flex",
+            "flex-col",
+            "items-center",
+            "justify-center",
+            "p-6",
+            "rounded-xl",
+            "border-2",
+            "border-gray-300",
+            "bg-white",
+            "text-gray-700",
+            "hover:border-yellow-300",
+            "hover:bg-yellow-50",
+            "transition-all",
+            "cursor-pointer",
+            "text-center"
+          );
+        });
+        document.querySelectorAll(".pill-btn").forEach((btn) => {
+          btn.classList.add(
+            "px-5",
+            "py-2",
+            "rounded-full",
+            "border",
+            "border-gray-300",
+            "bg-white",
+            "text-gray-700",
+            "text-sm",
+            "font-semibold",
+            "hover:border-yellow-300",
+            "transition-all",
+            "cursor-pointer"
           );
         });
 
