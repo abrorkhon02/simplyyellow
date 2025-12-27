@@ -74,7 +74,7 @@ Main gradient: `linear-gradient(135deg, #FFD54F 0%, #FFC107 100%)`
 
 Update these in all HTML files:
 
-- Email: `hello@simplyyellow.de`
+- Email: `catering@simplyyellow.de`
 - Phone: `+49 (0) XXX XXXX`
 - WhatsApp: Update link in footer/inquiry page
 

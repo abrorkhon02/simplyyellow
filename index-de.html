@@ -234,9 +234,17 @@
           <a href="#contact" class="py-2 text-gray-700 hover:text-yellow-500"
             >Kontakt</a
           >
+          <!-- Language Switcher (Mobile) -->
+          <a
+            href="index.html"
+            class="py-2 flex items-center gap-2 text-gray-700 hover:text-yellow-500"
+          >
+            <span class="text-lg">🇬🇧</span>
+            <span class="font-medium">English</span>
+          </a>
           <a
             href="inquiry-de.html"
-            class="mt-3 px-6 py-2.5 rounded-full bg-gradient-yellow text-gray-900 font-semibold text-center"
+            class="mt-4 px-6 py-3 rounded-full gradient-yellow text-gray-900 font-bold text-center shadow-lg hover:shadow-xl transition-shadow"
             >Angebot anfordern</a
           >
         </div>
@@ -679,17 +687,17 @@
                 <p>
                   <span class="text-gray-500">Email:</span>
                   <a
-                    href="mailto:hello@simplyyellow.de"
+                    href="mailto:catering@simplyyellow.de"
                     class="text-yellow-400 hover:text-yellow-300"
-                    >hello@simplyyellow.de</a
+                    >catering@simplyyellow.de</a
                   >
                 </p>
                 <p>
                   <span class="text-gray-500">Phone:</span>
                   <a
-                    href="tel:+49xxx"
+                    href="tel:+4915785147523"
                     class="text-yellow-400 hover:text-yellow-300"
-                    >+49 (0) XXX XXXX</a
+                    >+49 1578 5147523</a
                   >
                 </p>
                 <p>
@@ -1750,6 +1758,23 @@
           closeModal("coffee");
           closeModal("catering");
           closePortfolioModal();
+        }
+      });
+
+      // Mobile menu - ensure it works
+      document.addEventListener("DOMContentLoaded", function() {
+        const menuBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("navMenu");
+        if (menuBtn && navMenu) {
+          menuBtn.addEventListener("click", function() {
+            navMenu.classList.toggle("hidden");
+          });
+          // Close menu when any link is clicked
+          navMenu.querySelectorAll("a").forEach(function(link) {
+            link.addEventListener("click", function() {
+              navMenu.classList.add("hidden");
+            });
+          });
         }
       });
     </script>

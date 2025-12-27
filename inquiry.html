@@ -143,7 +143,6 @@
           id="menuBtn"
           class="lg:hidden w-10 h-10 flex items-center justify-center border border-gray-200 rounded-lg"
           aria-label="Menu"
-          onclick="toggleMobileMenu()"
         >
           <svg
             class="w-5 h-5"
@@ -193,9 +192,17 @@
             class="py-2 text-gray-700 hover:text-yellow-500"
             >Contact</a
           >
+          <!-- Language Switcher (Mobile) -->
+          <a
+            href="inquiry-de.html"
+            class="py-2 flex items-center gap-2 text-gray-700 hover:text-yellow-500"
+          >
+            <span class="text-lg">🇩🇪</span>
+            <span class="font-medium">Deutsch</span>
+          </a>
           <a
             href="inquiry.html"
-            class="mt-3 px-6 py-2.5 rounded-full bg-gradient-yellow text-gray-900 font-semibold text-center"
+            class="mt-4 px-6 py-3 rounded-full gradient-yellow text-gray-900 font-bold text-center shadow-lg hover:shadow-xl transition-shadow"
             >Get an Offer</a
           >
         </div>
@@ -641,7 +648,7 @@
                 Connect via WhatsApp
               </a>
               <p class="text-xs text-gray-500 text-center mt-3">
-                hello@simplyyellow.de
+                catering@simplyyellow.de
               </p>
             </div>
           </aside>
@@ -665,15 +672,18 @@
       // Mobile Menu Toggle Function
       function toggleMobileMenu() {
         const navMenu = document.getElementById("mobileNavInquiry");
-        navMenu.classList.toggle("hidden");
+        if (navMenu) {
+          navMenu.classList.toggle("hidden");
+        }
       }
 
-      // Language switcher
+      // Language switcher (only if elements exist)
       let currentLang = "en";
       const langDisplay = document.getElementById("current-lang");
       const langFlag = document.getElementById("current-flag");
 
       function toggleLang() {
+        if (!langDisplay || !langFlag) return;
         if (currentLang === "en") {
           currentLang = "de";
           langDisplay.textContent = "DE";
@@ -979,9 +989,48 @@
         renderSummary();
       }
 
-      function showThanks() {
-        document.getElementById("thanks").classList.remove("hidden");
-        window.scrollTo({ top: 0, behavior: "smooth" });
+      async function showThanks() {
+        const btnSubmit = document.getElementById("btnSubmit");
+        const originalText = btnSubmit.textContent;
+        
+        // Show loading state
+        btnSubmit.disabled = true;
+        btnSubmit.textContent = "Sending...";
+        
+        try {
+          // Prepare form data
+          const formData = {
+            ...state,
+            language: 'en'
+          };
+          
+          // Submit to PHP endpoint
+          const response = await fetch('send-mail.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+          });
+          
+          const result = await response.json();
+          
+          if (result.success) {
+            document.getElementById("thanks").classList.remove("hidden");
+            // Hide the form
+            document.querySelector("form").style.display = "none";
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          } else {
+            alert(result.message || "Something went wrong. Please try again or contact us directly.");
+            btnSubmit.disabled = false;
+            btnSubmit.textContent = originalText;
+          }
+        } catch (error) {
+          console.error("Form submission error:", error);
+          alert("Could not send your request. Please try again or contact us via WhatsApp.");
+          btnSubmit.disabled = false;
+          btnSubmit.textContent = originalText;
+        }
       }
 
       // Initialize
@@ -1064,6 +1113,23 @@
           );
         });
       });
+
+      // Mobile menu - run immediately since script is at bottom of page
+      (function() {
+        const menuBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("mobileNavInquiry");
+        if (menuBtn && navMenu) {
+          menuBtn.addEventListener("click", function() {
+            navMenu.classList.toggle("hidden");
+          });
+          // Close menu when any link is clicked
+          navMenu.querySelectorAll("a").forEach(function(link) {
+            link.addEventListener("click", function() {
+              navMenu.classList.add("hidden");
+            });
+          });
+        }
+      })();
     </script>
   </body>
 </html>

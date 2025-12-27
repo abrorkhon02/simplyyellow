@@ -148,7 +148,6 @@
           id="menuBtn"
           class="lg:hidden w-10 h-10 flex items-center justify-center border border-gray-200 rounded-lg"
           aria-label="Menu"
-          onclick="toggleMobileMenu()"
         >
           <svg
             class="w-5 h-5"
@@ -198,9 +197,17 @@
             class="py-2 text-gray-700 hover:text-yellow-500"
             >Contact</a
           >
+          <!-- Language Switcher (Mobile) -->
+          <a
+            href="impressum-de.html"
+            class="py-2 flex items-center gap-2 text-gray-700 hover:text-yellow-500"
+          >
+            <span class="text-lg">🇩🇪</span>
+            <span class="font-medium">Deutsch</span>
+          </a>
           <a
             href="inquiry.html"
-            class="mt-3 px-6 py-2.5 rounded-full bg-gradient-yellow text-gray-900 font-semibold text-center"
+            class="mt-4 px-6 py-3 rounded-full gradient-yellow text-gray-900 font-bold text-center shadow-lg hover:shadow-xl transition-shadow"
             >Get an Offer</a
           >
         </div>
@@ -210,57 +217,57 @@
     <main class="pt-28 pb-16">
       <div class="max-w-3xl mx-auto px-6 lg:px-8">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
-          Impressum
+          Legal Notice
         </h1>
 
         <div class="space-y-8 text-gray-700 leading-relaxed">
           <!-- Company Info -->
           <section class="space-y-3">
             <h2 class="text-lg font-semibold text-gray-900">
-              Angaben gemäß § 5 TMG
+              Information according to § 5 TMG
             </h2>
             <p>
               <strong>Simply Yellow Catering</strong><br />
-              Straße und Hausnummer<br />
+              Street and Number<br />
               12345 Berlin<br />
-              Deutschland
+              Germany
             </p>
           </section>
 
           <!-- Contact -->
           <section class="space-y-3">
-            <h2 class="text-lg font-semibold text-gray-900">Kontakt</h2>
+            <h2 class="text-lg font-semibold text-gray-900">Contact</h2>
             <p>
-              Telefon:
-              <a href="tel:+49xxx" class="text-yellow-600 hover:text-yellow-700"
-                >+49 (0) XXX XXXX</a
+              Phone:
+              <a href="tel:+4915785147523" class="text-yellow-600 hover:text-yellow-700"
+                >+49 1578 5147523</a
               ><br />
-              E-Mail:
+              Email:
               <a
-                href="mailto:hello@simplyyellow.de"
+                href="mailto:catering@simplyyellow.de"
                 class="text-yellow-600 hover:text-yellow-700"
-                >hello@simplyyellow.de</a
+                >catering@simplyyellow.de</a
               >
             </p>
           </section>
 
           <!-- Representation -->
           <section class="space-y-3">
-            <h2 class="text-lg font-semibold text-gray-900">Vertreten durch</h2>
+            <h2 class="text-lg font-semibold text-gray-900">Represented by</h2>
             <p>
               BEA Le Duy<br />
-              Geschäftsführer
+              Managing Director
             </p>
           </section>
 
           <!-- Responsible Content -->
           <section class="space-y-3">
             <h2 class="text-lg font-semibold text-gray-900">
-              Inhaltlich verantwortlich gemäß § 55 RStV
+              Responsible for content according to § 55 RStV
             </h2>
             <p>
               BEA Le Duy<br />
-              Straße und Hausnummer<br />
+              Street and Number<br />
               12345 Berlin
             </p>
           </section>
@@ -270,33 +277,26 @@
             class="bg-gray-50 border border-gray-200 rounded-lg p-6 space-y-3"
           >
             <h2 class="text-lg font-semibold text-gray-900">
-              Haftungsausschluss
+              Disclaimer
             </h2>
             <p class="text-sm">
-              Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
-              Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
-              können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter
-              sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten
-              nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 des
-              TMG sind wir als Diensteanbieter jedoch nicht verpflichtet,
-              übermittelte oder gespeicherte fremde Informationen zu überwachen
-              oder nach Umständen zu forschen, die auf eine rechtswidrige
-              Tätigkeit hinweisen.
+              The contents of our pages were created with the utmost care.
+              However, we cannot guarantee the accuracy, completeness, or
+              timeliness of the content. As a service provider, we are
+              responsible for our own content on these pages in accordance with
+              general laws pursuant to § 7 para.1 TMG. According to §§ 8 to 10
+              TMG, however, we are not obligated as a service provider to
+              monitor transmitted or stored third-party information or to
+              investigate circumstances that indicate illegal activity.
             </p>
             <p class="text-sm">
-              Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
-              Informationen bleiben hiervon unberührt. Eine diesbezügliche
-              Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer
-              konkreten Rechtsverletzung möglich.
+              Obligations to remove or block the use of information under
+              general law remain unaffected. However, liability in this regard
+              is only possible from the time of knowledge of a specific
+              infringement.
             </p>
           </section>
 
-          <!-- Placeholder -->
-          <p class="text-xs text-gray-400 border-t border-gray-200 pt-6">
-            Hinweis: Dies ist eine Platzhalter-Vorlage. Bitte ersetzen Sie alle
-            Angaben durch die korrekten und rechtlich geprüften Daten Ihres
-            Unternehmens.
-          </p>
         </div>
       </div>
     </main>
@@ -311,15 +311,18 @@
       // Mobile Menu Toggle Function
       function toggleMobileMenu() {
         const navMenu = document.getElementById("mobileNavImpressum");
-        navMenu.classList.toggle("hidden");
+        if (navMenu) {
+          navMenu.classList.toggle("hidden");
+        }
       }
 
-      // Language switcher
+      // Language switcher (only if elements exist)
       let impressumLang = "en";
       const langDisplay = document.getElementById("current-lang");
       const langFlag = document.getElementById("current-flag");
 
       function toggleLang() {
+        if (!langDisplay || !langFlag) return;
         if (impressumLang === "en") {
           impressumLang = "de";
           langDisplay.textContent = "DE";
@@ -332,6 +335,23 @@
           document.documentElement.lang = "en";
         }
       }
+
+      // Mobile menu - run immediately since script is at bottom of page
+      (function() {
+        const menuBtn = document.getElementById("menuBtn");
+        const navMenu = document.getElementById("mobileNavImpressum");
+        if (menuBtn && navMenu) {
+          menuBtn.addEventListener("click", function() {
+            navMenu.classList.toggle("hidden");
+          });
+          // Close menu when any link is clicked
+          navMenu.querySelectorAll("a").forEach(function(link) {
+            link.addEventListener("click", function() {
+              navMenu.classList.add("hidden");
+            });
+          });
+        }
+      })();
     </script>
   </body>
 </html>
